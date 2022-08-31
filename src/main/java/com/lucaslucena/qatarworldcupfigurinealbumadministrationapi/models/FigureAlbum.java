@@ -1,7 +1,5 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models;
 
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.enums.FigureType;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -20,7 +18,7 @@ public class FigureAlbum {
     @JoinTable(name = "figure_album_has_figure",
     joinColumns = @JoinColumn(name = "figure_album_id"),
     inverseJoinColumns = @JoinColumn(name = "figure_id"))
-    private List<Figure> figures;
+    private List<NormalFigure> figures;
 
 }
 
