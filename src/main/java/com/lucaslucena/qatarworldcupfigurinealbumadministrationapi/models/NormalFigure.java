@@ -21,6 +21,7 @@ public class NormalFigure {
 
     @Column(nullable = true)
     private String name;
+
 //    @Column
 //    @Enumerated(value = EnumType.STRING)
 //    private FigureType figure_type;
