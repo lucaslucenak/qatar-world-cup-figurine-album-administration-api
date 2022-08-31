@@ -13,12 +13,17 @@ public class NormalFigure {
 //    private Long id;
 
     @Id
-    @Column
+    @Column(unique = true)
     private String code;
 
-    @Column
-    @Enumerated(value = EnumType.STRING)
-    private FigureType figure_type;
+    @Column(nullable = true)
+    private String country;
+
+    @Column(nullable = true)
+    private String name;
+//    @Column
+//    @Enumerated(value = EnumType.STRING)
+//    private FigureType figure_type;
 
 //    @OneToMany
 //    @JoinColumn(name = "figures")

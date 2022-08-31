@@ -11,14 +11,15 @@ public class FigureAlbum {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String owner;
 
     @ManyToMany
-    @JoinTable(name = "figure_album_has_figure",
+    @JoinTable(name = "figure_album_has_normal_figure",
     joinColumns = @JoinColumn(name = "figure_album_id"),
-    inverseJoinColumns = @JoinColumn(name = "figure_id"))
-    private List<NormalFigure> figures;
+    inverseJoinColumns = @JoinColumn(name = "normal_figure_id"))
+    private List<NormalFigure> normal_figures;
+
 
 }
 
