@@ -8,10 +8,11 @@ import javax.persistence.*;
 @Table(name = "tb_figure")
 public class Figure {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
 
+    @Id
     @Column
     private String code;
 
@@ -19,7 +20,7 @@ public class Figure {
     @Enumerated(value = EnumType.STRING)
     private FigureType figure_type;
 
-    @ManyToOne
-    @JoinColumn(name = "figures")
-    private FigureAlbum figure_album;
+//    @OneToMany
+//    @JoinColumn(name = "figures")
+//    private FigureAlbum figure_album;
 }

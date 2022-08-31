@@ -13,7 +13,14 @@ public class FigureAlbum {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "figure_album")
+    @Column
+    private String owner;
+
+    @ManyToMany
+    @JoinTable(name = "figure_album_has_figure",
+    joinColumns = @JoinColumn(name = "figure_album_id"),
+    inverseJoinColumns = @JoinColumn(name = "figure_id"))
     private List<Figure> figures;
+
 }
 
