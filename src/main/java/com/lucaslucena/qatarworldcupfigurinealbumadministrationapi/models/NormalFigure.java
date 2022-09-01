@@ -1,9 +1,13 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models;
 
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.enums.FigureType;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_figure")
 public class NormalFigure {

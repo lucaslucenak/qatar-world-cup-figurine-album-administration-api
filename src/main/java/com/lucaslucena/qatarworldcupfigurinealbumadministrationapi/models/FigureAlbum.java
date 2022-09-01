@@ -1,8 +1,12 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models;
 
-import javax.persistence.*;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_figure_album")
 public class FigureAlbum {
