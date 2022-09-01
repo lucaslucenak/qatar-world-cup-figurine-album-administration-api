@@ -60,6 +60,5 @@ public class FigureAlbumService {
         } catch (DataIntegrityViolationException e) {
             throw new DatabaseException("Database violation.");
         }
-        figureAlbumRepository.deleteById(id);
     }
 }

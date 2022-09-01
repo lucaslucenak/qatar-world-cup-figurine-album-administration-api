@@ -45,5 +45,11 @@ public class FigureAlbumController {
         return figureAlbumService.findByOwner(owner);
     }
 
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteFigureAlbumById(@PathVariable("id") Long id) {
+        figureAlbumService.deleteById(id);
+    }
+
 
 }
