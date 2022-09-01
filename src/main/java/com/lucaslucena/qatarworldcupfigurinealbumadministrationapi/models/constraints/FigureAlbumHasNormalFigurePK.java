@@ -1,4 +1,4 @@
-package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.entities;
+package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.constraints;
 
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbum;
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.NormalFigure;

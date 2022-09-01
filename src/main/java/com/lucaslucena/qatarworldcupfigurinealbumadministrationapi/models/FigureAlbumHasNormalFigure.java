@@ -1,6 +1,6 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models;
 
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.entities.FigureAlbumHasNormalFigurePK;
+import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.constraints.FigureAlbumHasNormalFigurePK;
 import lombok.Getter;
 import lombok.Setter;
 
