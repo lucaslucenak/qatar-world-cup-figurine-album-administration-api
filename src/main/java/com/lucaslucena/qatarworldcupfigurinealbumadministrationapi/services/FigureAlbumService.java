@@ -48,6 +48,7 @@ public class FigureAlbumService {
                 figureAlbum = i;
             }
         }
+
         return new FigureAlbumDto(figureAlbum);
     }
 
