@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/figure-album")
@@ -25,4 +26,18 @@ public class FigureAlbumController {
     public FigureAlbumDto saveFigureAlbum(@RequestBody FigureAlbumDto figureAlbumDto) {
         return figureAlbumService.saveFigureAlbum(figureAlbumDto);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<FigureAlbumDto> findAllFigureAlbums() {
+        return figureAlbumService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public FigureAlbumDto findAllFigureAlbumById(@PathVariable("id") Long id) {
+        return figureAlbumService.findById(id);
+    }
+
+
 }

@@ -41,6 +41,16 @@ public class FigureAlbumService {
         return figureAlbums.stream().map(x -> new FigureAlbumDto(x)).toList();
     }
 
+    public FigureAlbumDto findByOwner(String owner) {
+        FigureAlbum figureAlbum = new FigureAlbum();
+        for (FigureAlbum i : figureAlbumRepository.findAll()) {
+            if (i.getOwner().equals(owner)) {
+                figureAlbum = i;
+            }
+        }
+        return new FigureAlbumDto(figureAlbum);
+    }
+
     public void deleteById(Long id) {
         try {
             figureAlbumRepository.deleteById(id);
