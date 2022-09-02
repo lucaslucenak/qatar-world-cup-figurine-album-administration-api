@@ -35,5 +35,17 @@ public class FigureAlbumController {
         return figureAlbumService.findById(id);
     }
 
+    @GetMapping("/find-by-owner/{owner}")
+    @ResponseStatus(HttpStatus.OK)
+    public FigureAlbumDto findFigureAlbumByOwner(@PathVariable("owner") String owner) {
+        return figureAlbumService.findByOwner(owner);
+    }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteFigureAlbumById(@PathVariable("id") Long id) {
+        figureAlbumService.deleteById(id);
+    }
+
 
 }

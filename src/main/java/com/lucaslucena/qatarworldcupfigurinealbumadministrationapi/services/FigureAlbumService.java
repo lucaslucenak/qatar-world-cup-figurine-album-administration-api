@@ -47,6 +47,7 @@ public class FigureAlbumService {
                 figureAlbum = i;
             }
         }
+
         return new FigureAlbumDto(figureAlbum);
     }
 
@@ -58,6 +59,5 @@ public class FigureAlbumService {
         } catch (DataIntegrityViolationException e) {
             throw new DatabaseException("Database violation.");
         }
-        figureAlbumRepository.deleteById(id);
     }
 }
