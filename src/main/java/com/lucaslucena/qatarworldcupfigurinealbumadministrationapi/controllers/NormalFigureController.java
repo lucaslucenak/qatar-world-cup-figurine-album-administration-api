@@ -35,4 +35,10 @@ public class NormalFigureController {
     public NormalFigureDto findNormalFigureById(@PathVariable("id") String id) {
         return normalFigureService.findById(id);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteNormalFigureById(@PathVariable("id") String id) {
+        normalFigureService.deleteById(id);
+    }
 }

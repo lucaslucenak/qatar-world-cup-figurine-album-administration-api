@@ -48,6 +48,5 @@ public class NormalFigureService {
         } catch (DataIntegrityViolationException e) {
             throw new DatabaseException("Database violation.");
         }
-        normalFigureRepository.deleteById(id);
     }
 }
