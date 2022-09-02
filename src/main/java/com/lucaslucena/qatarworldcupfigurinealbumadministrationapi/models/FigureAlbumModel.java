@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "tb_figure_album")
-public class FigureAlbum {
+public class FigureAlbumModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

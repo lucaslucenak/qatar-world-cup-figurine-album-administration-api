@@ -1,6 +1,5 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models;
 
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.enums.FigureType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,21 +9,29 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "tb_figure")
-public class NormalFigure {
+public class NormalFigureModel {
 
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Long id;
 
+
+    public NormalFigureModel(String id) {
+        this.id = id;
+    }
+
+    public NormalFigureModel() {
+    }
+
     @Id
     @Column(unique = true)
-    private String code;
+    private String id;
 
-    @Column(nullable = true)
-    private String country;
-
-    @Column(nullable = true)
-    private String name;
+//    @Column(nullable = true)
+//    private String country;
+//
+//    @Column(nullable = true)
+//    private String name;
 
 //    @Column
 //    @Enumerated(value = EnumType.STRING)

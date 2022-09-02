@@ -3,7 +3,7 @@ package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.services;
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.dto.FigureAlbumDto;
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.exceptions.DatabaseException;
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.exceptions.ResourceNotFoundException;
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbum;
+import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbumModel;
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.repositories.FigureAlbumRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -24,26 +24,25 @@ public class FigureAlbumService {
     }
 
     public FigureAlbumDto saveFigureAlbum(FigureAlbumDto figureAlbumDto) {
-        FigureAlbum figureAlbum = new FigureAlbum();
+        FigureAlbumModel figureAlbum = new FigureAlbumModel();
         BeanUtils.copyProperties(figureAlbumDto, figureAlbum);
         figureAlbumRepository.save(figureAlbum);
         return new FigureAlbumDto(figureAlbum);
     }
 
     public FigureAlbumDto findById(Long id) {
-        FigureAlbum figureAlbum = figureAlbumRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        FigureAlbumModel figureAlbum = figureAlbumRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return new FigureAlbumDto(figureAlbum);
     }
 
     public List<FigureAlbumDto> findAll() {
-        List<FigureAlbum> figureAlbums = figureAlbumRepository.findAll();
-
+        List<FigureAlbumModel> figureAlbums = figureAlbumRepository.findAll();
         return figureAlbums.stream().map(x -> new FigureAlbumDto(x)).toList();
     }
 
     public FigureAlbumDto findByOwner(String owner) {
-        FigureAlbum figureAlbum = new FigureAlbum();
-        for (FigureAlbum i : figureAlbumRepository.findAll()) {
+        FigureAlbumModel figureAlbum = new FigureAlbumModel();
+        for (FigureAlbumModel i : figureAlbumRepository.findAll()) {
             if (i.getOwner().equals(owner)) {
                 figureAlbum = i;
             }

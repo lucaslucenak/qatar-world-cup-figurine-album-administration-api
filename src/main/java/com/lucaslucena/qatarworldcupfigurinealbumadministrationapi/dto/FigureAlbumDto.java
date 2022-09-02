@@ -1,10 +1,8 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.dto;
 
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbum;
+import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbumModel;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.Column;
 
 @Getter
 @Setter
@@ -22,7 +20,7 @@ public class FigureAlbumDto {
         this.owner = owner;
     }
 
-    public FigureAlbumDto(FigureAlbum figureAlbum) {
+    public FigureAlbumDto(FigureAlbumModel figureAlbum) {
         this.id = figureAlbum.getId();
         this.owner = figureAlbum.getOwner();
     }

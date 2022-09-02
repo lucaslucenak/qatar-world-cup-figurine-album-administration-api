@@ -1,4 +1,4 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models;
 
-public class LegendFigure {
+public class LegendFigureModel {
 }

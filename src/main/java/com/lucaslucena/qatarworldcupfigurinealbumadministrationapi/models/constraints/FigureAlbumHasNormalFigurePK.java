@@ -1,7 +1,7 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.constraints;
 
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbum;
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.NormalFigure;
+import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbumModel;
+import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.NormalFigureModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,11 +19,11 @@ public class FigureAlbumHasNormalFigurePK implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "figure_album_id")
-    private FigureAlbum figureAlbum;
+    private FigureAlbumModel figureAlbum;
 
     @ManyToOne
     @JoinColumn(name = "normal_figure_id")
-    private NormalFigure normalFigure;
+    private NormalFigureModel normalFigure;
 
     @Column
     private LocalDateTime local_date = LocalDateTime.now();
@@ -31,7 +31,7 @@ public class FigureAlbumHasNormalFigurePK implements Serializable {
     public FigureAlbumHasNormalFigurePK() {
     }
 
-    public FigureAlbumHasNormalFigurePK(FigureAlbum figureAlbum, NormalFigure normalFigure) {
+    public FigureAlbumHasNormalFigurePK(FigureAlbumModel figureAlbum, NormalFigureModel normalFigure) {
         this.figureAlbum = figureAlbum;
         this.normalFigure = normalFigure;
     }

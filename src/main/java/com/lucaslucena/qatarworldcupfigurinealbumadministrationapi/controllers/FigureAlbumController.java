@@ -1,14 +1,10 @@
 package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.controllers;
 
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.dto.FigureAlbumDto;
-import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbum;
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.services.FigureAlbumService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -35,7 +31,7 @@ public class FigureAlbumController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public FigureAlbumDto findAllFigureAlbumById(@PathVariable("id") Long id) {
+    public FigureAlbumDto findFigureAlbumById(@PathVariable("id") Long id) {
         return figureAlbumService.findById(id);
     }
 
