@@ -6,6 +6,7 @@ import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.exceptions.Re
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbumModel;
 import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.repositories.FigureAlbumRepository;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -17,11 +18,12 @@ import java.util.List;
 @Service
 public class FigureAlbumService {
 
-    final FigureAlbumRepository figureAlbumRepository;
+    @Autowired
+    /*final*/ private FigureAlbumRepository figureAlbumRepository;
 
-    public FigureAlbumService(FigureAlbumRepository figureAlbumRepository) {
-        this.figureAlbumRepository = figureAlbumRepository;
-    }
+//    public FigureAlbumService(FigureAlbumRepository figureAlbumRepository) {
+//        this.figureAlbumRepository = figureAlbumRepository;
+//    }
 
     public FigureAlbumDto saveFigureAlbum(FigureAlbumDto figureAlbumDto) {
         FigureAlbumModel figureAlbum = new FigureAlbumModel();

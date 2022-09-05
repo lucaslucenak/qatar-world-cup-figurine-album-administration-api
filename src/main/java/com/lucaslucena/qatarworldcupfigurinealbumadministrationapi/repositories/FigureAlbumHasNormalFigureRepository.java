@@ -1,0 +1,10 @@
+package com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.repositories;
+
+import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.FigureAlbumHasNormalFigure;
+import com.lucaslucena.qatarworldcupfigurinealbumadministrationapi.models.constraints.FigureAlbumHasNormalFigurePK;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface FigureAlbumHasNormalFigureRepository extends JpaRepository<FigureAlbumHasNormalFigure, FigureAlbumHasNormalFigurePK> {
+}
